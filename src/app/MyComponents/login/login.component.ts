@@ -40,7 +40,15 @@ flag:boolean = false;
 
      localStorage.setItem("Email_Store",value);
 
-this.route.navigateByUrl('/todoscomponent')
+this.route.navigateByUrl('/todoscomponent',
+{
+  queryParams: {
+    primEmail:'yourEMAIL'
+  }
+}
+
+
+);
 
 
   }
