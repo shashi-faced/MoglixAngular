@@ -1,7 +1,11 @@
 <br />
+<div class="container">
+    <h3>Your Posts</h3>
+    </div>
 <div class = "container">
     <div *ngFor="let user of users">
-         <input type = button class = "" value = "{{user.id}}:  {{user.body}} " (click) = "onComments()">
+         <!-- <input type = button class = "" value = "{{user.id}}:  {{user.body}} " (click) = "onComments()"> -->
+         <a [routerLink]="['']" routerLinkActive="router-link-active" >{{user.id}}:  {{user.body}} </a>
         </div>
          <!-- <input type = button class = "btn btn-primary" value = {{user.body}}></div> -->
     
