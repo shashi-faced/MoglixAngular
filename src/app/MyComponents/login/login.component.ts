@@ -9,12 +9,11 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   dataForm: FormGroup
-  
-  
-    
-  
+  email: string;
 
-  constructor(private route:Router,private fb:FormBuilder) { }
+  constructor(private route:Router,private fb:FormBuilder) {}
+
+   
 flag:boolean = false;
   ngOnInit() {
 
@@ -32,6 +31,15 @@ flag:boolean = false;
   login() {
     // console.log(this.dataForm.value)
     console.log("login method is working properly")
+
+     const email = this.primEmail; //primEmail is id of input type of email
+     const value = this.email;
+    
+     console.log(this.email);
+     console.log(value);
+
+     localStorage.setItem("Email_Store",value);
+
 this.route.navigateByUrl('/todoscomponent')
 
 
