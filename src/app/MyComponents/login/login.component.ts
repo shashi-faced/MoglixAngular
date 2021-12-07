@@ -43,7 +43,7 @@ flag:boolean = false;
 this.route.navigateByUrl('/todoscomponent',
 {
   queryParams: {
-    primEmail:'yourEMAIL'
+    apkaEmail:'primEmail'
   }
 }
 
