@@ -35,20 +35,18 @@ flag:boolean = false;
      const email = this.primEmail; //primEmail is id of input type of email
      const value = this.email;
     
-     console.log(this.email);
-     console.log(value);
+     
 
      localStorage.setItem("Email_Store",value);
+     console.log(this.email);
+     console.log(value);
 
 this.route.navigateByUrl('/todoscomponent',
 {
   queryParams: {
-    apkaEmail:'primEmail'
+    primEmail:"name"
   }
-}
-
-
-);
+});
 
 
   }

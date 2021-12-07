@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-comments',
@@ -10,9 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CommentsComponent implements OnInit {
   users: any;
+  comments: any = []
   
-  private data:any = []
-  constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute) { }
+  data:any = []
+  constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,private commentData : ServiceService) { }
 
   ngOnInit() {
      
@@ -23,9 +25,17 @@ export class CommentsComponent implements OnInit {
      
   }
 
-  getComments(postId) {
+  getComments(id: number) {
+    // this.commentData.getComment().subscribe((comment) => {
+    //   this.users = comment
     let resp = this.http.get("https://jsonplaceholder.typicode.com/comments");
-    resp.subscribe((data) => this.users = data);
+    resp.subscribe((data:any) =>
+     {
+
+      this.users = data.filter((comment: any) => comment.postId == id);
+    }
+
+     );
   }
 
 }
