@@ -1,5 +1,8 @@
 <br />
 <h1>   Comments : </h1>
-<div *ngFor="let user of users">
+<div *ngFor="let user of users; index as i">
     <br>
-    <input type = button class = "" value = "{{user.id}}:  {{user.body}} "></div>
+    
+    <input type = button class="buttonSize" [disabled] = true value = "{{user.id}}:  {{user.body}} ">
+   
+</div>

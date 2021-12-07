@@ -21,7 +21,7 @@ const routes: Routes = [
     component: PostsComponent
   },
   {
-    path:'comments',
+    path:'comments/:postId',
     component: CommentsComponent
   }
 ];

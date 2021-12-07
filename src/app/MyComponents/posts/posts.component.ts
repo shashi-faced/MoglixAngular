@@ -18,8 +18,8 @@ export class PostsComponent implements OnInit {
        resp.subscribe((data) => this.users = data);
   }
 
-  onComments()
-  {
-    this.router.navigateByUrl('/comments');
+  onComments(i)
+  { 
+    this.router.navigate(['/comments', i]);
   }
 }
