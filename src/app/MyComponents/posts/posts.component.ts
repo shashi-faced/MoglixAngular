@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from 'src/app/service.service';
+import { PostService } from 'src/app/post.service';
 
 @Component({
   selector: 'app-posts',
@@ -13,7 +13,7 @@ export class PostsComponent implements OnInit {
   post:any = []
   
 
-  constructor(private http: HttpClient,private router: Router,private postdata: ServiceService) { }
+  constructor(private http: HttpClient,private router: Router,private postdata: PostService) { }
 
   ngOnInit() {
       this.postdata.getPost().subscribe((post) => {
