@@ -41,12 +41,7 @@ flag:boolean = false;
      console.log(this.email);
      console.log(value);
 
-this.route.navigateByUrl('/todoscomponent',
-{
-  queryParams: {
-    primEmail:"name"
-  }
-});
+this.route.navigateByUrl('/todoscomponent');
 
 
   }
