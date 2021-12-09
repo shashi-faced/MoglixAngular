@@ -36,7 +36,7 @@ export class TodosComponent implements OnInit {
     }
     else
     {
-      document.getElementById("valid").innerHTML = "Empty Fild can't Store."
+      document.getElementById("valid").innerHTML = "Empty Field can't Store."
     }
   }
 

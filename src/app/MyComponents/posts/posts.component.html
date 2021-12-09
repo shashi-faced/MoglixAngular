@@ -5,7 +5,7 @@
 <div class = "container">
     <div *ngFor="let user of users; let i = index">
         <br>
-         <input type = button  class = "" value = "{{user.id}}:  {{user.body}} " (click) = "onComments(user.id)">
+         <input type = button class = "buttonSize" value = "{{user.id}}:  {{user.body}} " (click) = "onComments(user.id)">
          <!-- <a [routerLink]="['']" routerLinkActive="router-link-active" >{{user.id}}:  {{user.body}} </a><br />
         </div> -->
     

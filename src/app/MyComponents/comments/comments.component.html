@@ -1,8 +1,10 @@
 <br />
 <h1>   Comments : </h1>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div *ngFor="let user of users; index as i">
+    {{i+1}}
     <br>
-    
-    <input type = button class="buttonSize" [disabled] = true value = "{{user.body}} ">
-   
+   <div class="w3-panel w3-pale-green">
+    <p class="buttonSize">{{user.body}}</p>
+  </div>	
 </div>
