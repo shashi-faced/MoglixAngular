@@ -1,4 +1,5 @@
 
+<p id = "valid" > </p>
 <div class="container">
     <div class="row">
       <div class="col-md-8 m-auto">
@@ -10,16 +11,19 @@
 <input *ngIf="!isEdit"  class="btn btn-success" type="button" value="Add" (click)="addTodo()"/>
 <input *ngIf="isEdit" class="btn btn-success" type="button" value="Edit" (click)="updateTodo()"/>
 <br />
+<p id = "check"></p>
 <ul *ngFor= "let todo of todos;let i = index">
     <li>{{todo}}
     <form class="col-md-12">
     
-        <input type="checkbox"  value ="text"> 
+        <input type="checkbox"  value ="text" (click) = "checkboxClicked()" (unchecked) = "unchecked()"> 
         
-        <input type="button" value="Edit"  class ="btnSpace" class="btn btn-secondary" (click)="editTodo(i)"/>
-    
+        <input type="button" value="Edit"  class ="btn" class="btn btn-secondary" (click)="editTodo(i)"/>
         <input type="button" value="Delete" class="btn btn-danger" (click)="deleteTodo(i)" /> 
+        <br /><br /><br />
 </form>    
+
+
 </li>
 </ul>
 </div>

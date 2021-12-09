@@ -4,17 +4,11 @@
       width: 60%;
       padding: 10px;
     }
-    .btnSpace
-    {
-      margin:10p;
-    }
     .totalCss
     {
-  
-      text-decoration-color: blueviolet;
-    
+      content-visibility: true !important;
     }
-    .btnst
+    .btn
     {
-      margin:10px
+      margin:5px
     }

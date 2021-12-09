@@ -32,6 +32,11 @@ export class TodosComponent implements OnInit {
     this.todos.push(this.currentTodo);
     this.currentTodo = '';
     this.x=this.todos.length;
+    document.getElementById("valid").innerHTML = "Empty Fild can't Store."
+    }
+    else
+    {
+      document.getElementById("valid").innerHTML = "Empty Fild can't Store."
     }
   }
 
@@ -59,4 +64,12 @@ export class TodosComponent implements OnInit {
   {
     this.route.navigateByUrl('/post')
   }
+  checkboxClicked()
+  {
+    document.getElementById("check").innerHTML = "CheckBox Feature is not Working Now";
+  }
+  // unchecked()
+  // {
+  //   document.getElementById("check").innerHTML = "Unchecked";
+  // }
 }
