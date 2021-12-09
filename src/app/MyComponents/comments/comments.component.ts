@@ -22,7 +22,7 @@ export class CommentsComponent implements OnInit {
     this.activeRoute.params          
     .subscribe(params => {
     this.getComments(params.postId);   // using this getComments method to take data from Api-->
-  });                                 // but isko service me krne ka hai.
+  });                                 
      
   }
 
