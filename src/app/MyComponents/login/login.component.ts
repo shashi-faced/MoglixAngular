@@ -28,23 +28,23 @@ flag:boolean = false;
 
 //  get f(){return this.dataForm.controls}
 
-  login(emailtext) {
+  login() {
     // console.log(this.dataForm.value)
-    let emailVal  = emailtext;
+    let emailVal  = this.primEmail;  //primemail ko email val me then print this.
     console.log("login method is working properly")
-    console.log(emailVal);
+    console.log(emailVal.value);
+    console.log(this.primEmail);
 
-    
-
-    //  const email = this.primEmail; //primEmail is id of input type of email
-    //  const value = this.email;
-    //  localStorage.setItem("Email_Store",value);
-    //  console.log(this.email);
-    //  console.log(value);
-
+    localStorage.setItem("Email_Store","skv@gmail.com");
+    // localStorage.setItem("Email_Store",emailVal.value);
+     if(emailVal.value == "skv@gmail.com"){
 
     this.route.navigateByUrl('/todoscomponent');
-
+     }
+     else
+     {
+       document.getElementById("Error").innerHTML = "Fill Correct Login or Password";
+     }
 
   }
 
