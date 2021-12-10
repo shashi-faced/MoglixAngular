@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   dataForm: FormGroup
   email: string;
+  auth: boolean = false;
 
   constructor(private route:Router,private fb:FormBuilder) {}
 
@@ -37,13 +38,16 @@ flag:boolean = false;
 
     localStorage.setItem("Email_Store","skv@gmail.com");
     // localStorage.setItem("Email_Store",emailVal.value);
+    
      if(emailVal.value == "skv@gmail.com"){
-
+      this.auth = true;  
+      if(this.auth){
     this.route.navigateByUrl('/todoscomponent');
      }
+    }
      else
      {
-       document.getElementById("Error").innerHTML = "Fill Correct Login or Password";
+       document.getElementById("Error").innerHTML = "Something Error";
      }
 
   }
@@ -52,5 +56,4 @@ flag:boolean = false;
     return this.dataForm.get('primaryEmail')
     }
     
-
 }
