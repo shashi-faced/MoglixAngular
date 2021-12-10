@@ -19,7 +19,7 @@ export class TodosComponent implements OnInit {
   constructor(private route:Router) {
    
     this.todos = 
-    ["Shashi k Verma","Amit Kumar","ICAT" ];
+    ["Shashi Verma","Amit Kumar","ICAT" ];
     this.x=this.todos.length;
     
    }
@@ -31,8 +31,8 @@ export class TodosComponent implements OnInit {
     if (this.currentTodo) {
     this.todos.push(this.currentTodo);
     this.currentTodo = '';
-    this.x=this.todos.length;
-    document.getElementById("valid").innerHTML = "Empty Fild can't Store."
+    this.x = this.todos.length;
+    document.getElementById("valid").innerHTML = ""
     }
     else
     {
@@ -59,10 +59,6 @@ export class TodosComponent implements OnInit {
     const td = this.todos.splice(index, 1);
     alert('we are deleting this - ' + td);
     this.x = this.todos.length;
-  }
-  postcomment()
-  {
-    this.route.navigateByUrl('/post')
   }
   checkboxClicked()
   {

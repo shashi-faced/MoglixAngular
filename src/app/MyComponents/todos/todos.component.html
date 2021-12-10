@@ -13,7 +13,8 @@
 <br />
 <p id = "check"></p>
 <ul *ngFor= "let todo of todos;let i = index">
-    <li>{{todo}}
+    <li>
+        <p class = "btn btn-outline-white btn-rounded">{{todo}}</p>
     <form class="col-md-12">
     
         <input type="checkbox"  value ="text" (click) = "checkboxClicked()" (unchecked) = "unchecked()"> 

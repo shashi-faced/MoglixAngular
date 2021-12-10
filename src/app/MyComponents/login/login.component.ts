@@ -28,11 +28,12 @@ flag:boolean = false;
 
 //  get f(){return this.dataForm.controls}
 
-  login(email,password) {
+  login(emailtext) {
     // console.log(this.dataForm.value)
+    let emailVal  = emailtext;
     console.log("login method is working properly")
-    console.log(email);
-    console.log(password);
+    console.log(emailVal);
+
     
 
     //  const email = this.primEmail; //primEmail is id of input type of email
@@ -42,7 +43,7 @@ flag:boolean = false;
     //  console.log(value);
 
 
-this.route.navigateByUrl('/todoscomponent');
+    this.route.navigateByUrl('/todoscomponent');
 
 
   }
