@@ -28,18 +28,19 @@ flag:boolean = false;
 
 //  get f(){return this.dataForm.controls}
 
-  login() {
+  login(email,password) {
     // console.log(this.dataForm.value)
     console.log("login method is working properly")
-
-     const email = this.primEmail; //primEmail is id of input type of email
-     const value = this.email;
+    console.log(email);
+    console.log(password);
     
-     
 
-     localStorage.setItem("Email_Store",value);
-     console.log(this.email);
-     console.log(value);
+    //  const email = this.primEmail; //primEmail is id of input type of email
+    //  const value = this.email;
+    //  localStorage.setItem("Email_Store",value);
+    //  console.log(this.email);
+    //  console.log(value);
+
 
 this.route.navigateByUrl('/todoscomponent');
 
