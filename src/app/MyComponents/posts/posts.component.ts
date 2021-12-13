@@ -13,10 +13,10 @@ export class PostsComponent implements OnInit {
   post:any = []
   
 
-  constructor(private http: HttpClient,private router: Router,private postdata: PostService) { }
+  constructor(private http: HttpClient,private router: Router,private postservice: PostService) { }
 
   ngOnInit() {
-      this.postdata.getPost().subscribe((post) => {
+      this.postservice.getPost().subscribe((post) => {
         this.users = post;
           // console.log(data)
 
