@@ -12,11 +12,12 @@ import { CommentsService } from 'src/app/comments.service';
 })
 export class CommentsComponent implements OnInit {
   users: any;
-  comments: any = []
+  comments: any = []    
   
+  commentprint: any = []
   data:any = []
-  commentfield: any;
-  commentdata: any;
+  commentfield: any;  //comment input field id  
+  commentdata: any;  //service reference
   constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,private commentData : CommentsService) { }
 
   ngOnInit() {
@@ -42,8 +43,9 @@ export class CommentsComponent implements OnInit {
      // this.comments.push(this.commentfield);
       console.log(this.commentfield)     
       
-      this.commentData.commentsList(this.commentfield);
+      this.commentprint =  this.commentData.commentsList(this.commentfield);
        this.commentfield = "";
+       localStorage.setItem;
     }
 
   }
