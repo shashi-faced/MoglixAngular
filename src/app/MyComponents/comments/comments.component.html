@@ -1,6 +1,17 @@
+<div class = "container">
 <br />
-<h1>   Comments : </h1>
+<h1 style="font-size: bold; font-weight: bold">   Comments Section: </h1>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<form action="/form/submit" method="GET">
+  <textarea rows="5" cols="60" name="text" placeholder="Enter text"></textarea>
+  <br/><br />
+  <input type="submit" class="btn btn-info"value="COMMENT" />
+</form>
+<br/>
+<br/>
+</div>
+
 <div *ngFor="let user of users; index as i">
     {{i+1}}
     <br>

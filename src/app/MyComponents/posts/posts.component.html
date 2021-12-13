@@ -1,4 +1,21 @@
-<br />
+
+<body class="container">
+
+        <form action="/form/submit" method="GET">
+          <textarea [(ngModel)]="postfield" rows="5" cols="60" name="text" placeholder="Type your Post "></textarea>
+          <br/>
+          <input type="submit" class = "btn btn-primary"value="POST" (click) = "addPost()" />
+          <br/>
+        </form>
+        <br /><br /><br />
+      
+    </body>
+    <div class = "container">
+        <div *ngFor = "let post of userpost;let i =  index">
+            <ul><li><p class = "btn btn-outline-white btn-rounded" (click) = "onComments(i)"> {{post}}</p></li></ul>
+
+    </div>
+<!-- <br />
 <div class="container">
     <h3 style="color: rgb(250, 0, 0);">Your Posts</h3>
     </div>
@@ -6,7 +23,6 @@
     <div *ngFor="let user of users; let i = index">
         <br>
          <input type = button class = "buttonSize" value = "{{user.id}}:  {{user.body}} " (click) = "onComments(user.id)">
-        
+         -->
          <!-- <a [routerLink]="['']" routerLinkActive="router-link-active" >{{user.id}}:  {{user.body}} </a><br />
         </div> -->
-    

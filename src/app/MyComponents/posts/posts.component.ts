@@ -9,9 +9,11 @@ import { PostService } from 'src/app/post.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  id:number;
+  [x: string]: any;
   users: any;
   post:any = []
-  
+  userpost = []
 
   constructor(private http: HttpClient,private router: Router,private postdata: PostService) { }
 
@@ -29,4 +31,13 @@ export class PostsComponent implements OnInit {
   { 
     this.router.navigate(['/comments', i]);
   }
+  addPost()
+  {
+    if(this.postfield){
+   this.userpost.push(this.postfield);
+   console.log(this.postfield);
+
+  }
+}
+
 }
