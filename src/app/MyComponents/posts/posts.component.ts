@@ -10,6 +10,7 @@ import { PostService } from 'src/app/post.service';
 })
 export class PostsComponent implements OnInit {
   id:number;
+  postfield: any;
   [x: string]: any;
   users: any;
   post:any = []
@@ -36,6 +37,7 @@ export class PostsComponent implements OnInit {
     if(this.postfield){
    this.userpost.push(this.postfield);
    console.log(this.postfield);
+   this.postfield = null;
 
   }
 }

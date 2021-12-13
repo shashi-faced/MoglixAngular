@@ -15,6 +15,8 @@ export class CommentsComponent implements OnInit {
   comments: any = []
   
   data:any = []
+  commentfield: any;
+  commentdata: any;
   constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,private commentData : CommentsService) { }
 
   ngOnInit() {
@@ -31,7 +33,19 @@ export class CommentsComponent implements OnInit {
     //   this.users = comment
     //    this.users = this.users.filter((comment: any) => comment.postId == id);
     // });
-    
-  
+  // 
   }
+  addComments(i)
+  {
+    if(this.commentfield)
+    {
+     // this.comments.push(this.commentfield);
+      console.log(this.commentfield)     
+      
+      this.commentData.commentsList(this.commentfield);
+       this.commentfield = "";
+    }
+
+  }
+
 }

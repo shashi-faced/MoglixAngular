@@ -4,18 +4,17 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <form action="/form/submit" method="GET">
-  <textarea rows="5" cols="60" name="text" placeholder="Enter text"></textarea>
+  <textarea [(ngModel)]="commentfield"rows="5" cols="60" name="text" placeholder="Enter Comments"></textarea>
   <br/><br />
-  <input type="submit" class="btn btn-info"value="COMMENT" />
+  <input type="submit" class="btn btn-info" value="COMMENT" (click) = "addComments(i)" />
 </form>
-<br/>
-<br/>
+<br/><br/>
 </div>
 
-<div *ngFor="let user of users; index as i">
+<div *ngFor="let user of comments; index as i">
     {{i+1}}
     <br>
    <div class="w3-panel w3-leftbar w3-border-blue w3-pale-blue">
-    <p class="buttonSize">{{user.body}} </p>
+    <p class="buttonSize">{{user}} </p>
   </div>	
 </div>
