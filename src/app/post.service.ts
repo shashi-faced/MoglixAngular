@@ -8,9 +8,10 @@ export class PostService {
 
   
    postUrl: string;
+  commentUrl: string;
 
   // postUrl: string = 'https://jsonplaceholder.typicode.com/posts';
-  commentUrl: string = 'https://jsonplaceholder.typicode.com/comments';
+  // commentUrl: string = 'https://jsonplaceholder.typicode.com/comments';
   constructor(private http: HttpClient) {
     this.postUrl = BASE_URL.POST_API_URL;
     console.log(this.postUrl)
@@ -24,5 +25,4 @@ export class PostService {
   {
     return this.http.get(this.commentUrl);
   }
-  
 }

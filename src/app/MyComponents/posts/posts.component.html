@@ -11,10 +11,10 @@
       
     </body>
     <div class = "container">
-        <div *ngFor = "let post of userpost;let i =  index">
-            <Button Type = "text" class = "" (click) ="onComments(i)" >{{post}}</Button>
+        <div *ngFor = "let post of getAllPosts()">
+            <Button Type = "text" class = "" (click) ="onComments(post.id)" >{{post.text}}</Button>
           
-            <ul><li><p class = "btn btn-outline-white btn-rounded" (click) = "onComments(i)"> {{post}}</p></li></ul>
+            <!-- <ul><li><p class = "btn btn-outline-white btn-rounded" (click) = "onComments(i)"> {{post}}</p></li></ul> -->
 
     </div>
 <!-- <br />

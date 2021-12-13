@@ -17,13 +17,17 @@ export class CommentsComponent implements OnInit {
   commentprint: any = []
   data:any = []
   commentfield: any;  //comment input field id  
+  postId: number;
   commentdata: any;  //service reference
-  constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,private commentData : CommentsService) { }
 
+  constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,
+                  private commentService : CommentsService) { }
+  
   ngOnInit() {
-     
+                    
     this.activeRoute.params          
     .subscribe(params => {
+      this.postId = params.postId;
     this.getComments(params.postId);   // using this getComments method to take data from Api-->
   });                                 
      
@@ -31,26 +35,32 @@ export class CommentsComponent implements OnInit {
 
   getComments(id: number) {
     return localStorage.getItem('tippadivalue');
-    // this.commentData.getComment().subscribe((comment) => {
-    //   this.users = comment
-    //    this.users = this.users.filter((comment: any) => comment.postId == id);
-    // });
-  // 
+
+    
+  
   }
   addComments(i)
   {
     if(this.commentfield)
     {
-     // this.comments.push(this.commentfield);
-     // console.log(this.commentfield)     
+      let commentObj = {postId: i, text: this.commentfield};
       
-      this.commentData.commentsList(this.commentfield);
+
+      this.commentService.addComment(this.postId, this.commentfield);
+
+      
+     //storing in service 
+      this.commentService.commentsList(this.commentfield);
       //this.commentprint = localStorage.getItem('tippadi');
       console.log(this.commentprint);
 
        this.commentfield = "";
     }
 
+  }
+
+  getCommentList() {
+    return this.commentService.getCommentList(this.postId);
   }
 
 }

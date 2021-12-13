@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommentsService } from 'src/app/comments.service';
 import { PostService } from 'src/app/post.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class PostsComponent implements OnInit {
   post:any = []
   userpost = []
 
-  constructor(private http: HttpClient,private router: Router,private postservice: PostService) { }
+  constructor(private http: HttpClient,private router: Router,private commentService: CommentsService,private postservice: PostService) { }
 
   ngOnInit() {
       this.postservice.getPost().subscribe((post) => {
@@ -35,11 +36,15 @@ export class PostsComponent implements OnInit {
   addPost()
   {
     if(this.postfield){
+      this.commentService.addPost(this.postfield);
    this.userpost.push(this.postfield);
    console.log(this.postfield);
    this.postfield = null;
 
   }
+}
+getAllPosts() {
+  return this.commentService.getAllPosts();
 }
 
 }
