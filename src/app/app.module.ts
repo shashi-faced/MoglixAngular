@@ -9,6 +9,7 @@ import { LoginComponent } from './MyComponents/login/login.component';
 import { PostsComponent } from './MyComponents/posts/posts.component';
 import { CommentsComponent } from './MyComponents/comments/comments.component';
 import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
