@@ -30,6 +30,7 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(id: number) {
+    return localStorage.getItem('tippadivalue');
     // this.commentData.getComment().subscribe((comment) => {
     //   this.users = comment
     //    this.users = this.users.filter((comment: any) => comment.postId == id);
@@ -41,11 +42,13 @@ export class CommentsComponent implements OnInit {
     if(this.commentfield)
     {
      // this.comments.push(this.commentfield);
-      console.log(this.commentfield)     
+     // console.log(this.commentfield)     
       
-      this.commentprint =  this.commentData.commentsList(this.commentfield);
+      this.commentData.commentsList(this.commentfield);
+      //this.commentprint = localStorage.getItem('tippadi');
+      console.log(this.commentprint);
+
        this.commentfield = "";
-       localStorage.setItem;
     }
 
   }

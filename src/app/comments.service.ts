@@ -18,6 +18,8 @@ export class CommentsService {
   commentsList(CommentsText)
   {
    this.userComments.push(CommentsText);
-   console.log(this.userComments)
+   console.log("printing from service  "+this.userComments)
+   localStorage.setItem('tippadivalue',this.userComments)
+   console.log("printing value from local storage "+localStorage.getItem('tippadivalue'));
   }
 }
