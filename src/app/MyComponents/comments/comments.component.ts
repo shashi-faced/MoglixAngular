@@ -27,17 +27,11 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(id: number) {
-    this.commentData.getComment().subscribe((comment) => {
-      this.users = comment
-       this.users = this.users.filter((comment: any) => comment.postId == id);
-    // let resp = this.http.get("https://jsonplaceholder.typicode.com/comments");
-    // resp.subscribe((data:any) =>
-     
-
-      
+    // this.commentData.getComment().subscribe((comment) => {
+    //   this.users = comment
+    //    this.users = this.users.filter((comment: any) => comment.postId == id);
+    // });
     
-
-    });
+  
   }
-
 }
