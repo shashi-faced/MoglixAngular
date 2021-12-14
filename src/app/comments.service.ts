@@ -13,20 +13,18 @@ export class CommentsService {
   constructor(private http: HttpClient) { }
 
 
-  getComment()
-  {
-    return this.http.get(this.commentUrl);
-  }
   commentsList(CommentsText)
   {
    this.userComments.push(CommentsText);
-   console.log("printing from service  "+this.userComments)
+   //console.log("printing from service  "+this.userComments)
+   
    localStorage.setItem('tippadivalue',this.userComments)
-   console.log("printing value from local storage "+localStorage.getItem('tippadivalue'));
+   
+   //console.log("printing value from local storage "+localStorage.getItem('tippadivalue'));
   }
 
   getLastPostId () {
-    return +localStorage.getItem('lpid');
+    return +localStorage.getItem('lpid');    //doubt
   }
 
   addPost(text) {

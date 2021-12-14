@@ -9,7 +9,7 @@
 </ul>
 
 <form action="/form/submit" method="GET">
-  <textarea [(ngModel)]="commentfield"rows="5" cols="60" name="text" placeholder="Enter Comments"></textarea>
+  <textarea [(ngModel)]="commentfield"rows="5" cols="60" name="text" class = "textareacss" placeholder="Enter Comments"></textarea>
   <br/><br />
   <input type="submit" class="btn btn-info" value="COMMENT" (click) = "addComments()" />
 </form>

@@ -11,7 +11,7 @@
 <input *ngIf="!isEdit"  class="btn btn-success" type="button" value="Add" (click)="addTodo()"/>
 <input *ngIf="isEdit" class="btn btn-success" type="button" value="Edit" (click)="updateTodo()"/>
 <br />
-<p id = "check"></p>
+
 <ul *ngFor= "let todo of todos;let i = index">
     <li>
         <p class = "btn btn-outline-white btn-rounded">{{todo}}</p>
@@ -23,11 +23,10 @@
         <input type="button" value="Delete" class="btn btn-danger" (click)="deleteTodo(i)" /> 
         <br /><br /><br />
 </form>    
-
-
 </li>
 </ul>
 </div>
+<p id = "check" text></p>
 </div>
 </div>
 </div>

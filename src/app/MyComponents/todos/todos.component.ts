@@ -19,7 +19,7 @@ export class TodosComponent implements OnInit {
   constructor(private route:Router) {
    
     this.todos = 
-    ["Amit Kumar","Shashi Verma"];
+    ["Amit Kumar","Shashi Kumar"];
     this.x=this.todos.length;
     
    }
