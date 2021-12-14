@@ -28,7 +28,7 @@ export class CommentsComponent implements OnInit {
     this.activeRoute.params          
     .subscribe(params => {
       this.postId = params.postId;
-    this.getComments(params.postId);   // using this getComments method to take data from Api-->
+    this.getComments(params.postId);   // using this getComments method to take data from >
   });                                 
      
   }
