@@ -20,11 +20,10 @@ export class PostsComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router,private commentService: CommentsService,private postservice: PostService) { }
 
   ngOnInit() {
-      this.postservice.getPost().subscribe((post) => {
-        this.users = post;
+    
           // console.log(data)
 
-      })
+      
       // let resp = this.http.get("https://jsonplaceholder.typicode.com/posts");
       //  resp.subscribe((data) => this.users = data);
   }
