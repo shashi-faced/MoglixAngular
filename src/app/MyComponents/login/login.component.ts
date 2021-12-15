@@ -33,8 +33,9 @@ flag:boolean = false;
   login() {
     // console.log(this.dataForm.value)
     let emailVal  = this.primEmail;  //primemail wala method primaryEmail field se data laya hai.
-    console.log("login method is working properly")
-    console.log("first"+emailVal.value);
+   
+     // console.log("login method is working properly")
+    //console.log("first"+emailVal.value);
 
     let str:string = emailVal.value;
     localStorage.setItem("username",str);

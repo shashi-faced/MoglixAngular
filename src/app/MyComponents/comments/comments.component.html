@@ -4,11 +4,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <div>All COMMENTS:</div>
-<ul *ngFor="let comment of getCommentList()">
+<div *ngFor="let comment of getCommentList()" class = "w3-panel w3-leftbar w3-border-blue w3-pale-blue">
+ <ul> 
   <p> Comment By: {{ userID }} </p>
-  <li>{{ comment}}
-</ul>
 
+  <li><p class = "buttonSize">{{ comment}}</p></li>
+</ul>
+</div>  
 <form action="/form/submit" method="GET">
   <textarea [(ngModel)]="commentfield"rows="5" cols="60" name="text" class = "textareacss" placeholder="Enter Comments"></textarea>
   <br/><br />

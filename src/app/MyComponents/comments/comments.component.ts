@@ -54,7 +54,7 @@ export class CommentsComponent implements OnInit {
 
        this.commentfield = "";
 
-        this.userID = localStorage.getItem('username');
+       this.userID = localStorage.getItem('username');
       console.log(this.userID);   
        console.log(typeof(this.userID));
 
@@ -65,5 +65,4 @@ export class CommentsComponent implements OnInit {
   getCommentList() {
     return this.commentService.getCommentList(this.postId);
   }
-
 }
