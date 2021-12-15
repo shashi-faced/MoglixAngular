@@ -19,6 +19,7 @@ export class CommentsComponent implements OnInit {
   commentfield: any;  //comment input field id  
   postId: number;
   commentdata: any;  //service reference
+  userID:string;
 
   constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,
                   private commentService : CommentsService) { }
@@ -43,9 +44,6 @@ export class CommentsComponent implements OnInit {
   {
     if(this.commentfield)
     {
-      let commentObj = {postId: i, text: this.commentfield};
-      
-
       this.commentService.addComment(this.postId, this.commentfield);
 
       
@@ -55,6 +53,11 @@ export class CommentsComponent implements OnInit {
       console.log(this.commentprint);
 
        this.commentfield = "";
+
+        this.userID = localStorage.getItem('username');
+      console.log(this.userID);   
+       console.log(typeof(this.userID));
+
     }
 
   }

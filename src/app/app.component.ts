@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CommentsService } from './comments.service';
 
 
 @Component({
@@ -9,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mytodos';
+  username:string;
+  constructor(private commentService: CommentsService) 
+  {
+  this.username = localStorage.getItem('username');   
+  }
+
+
 }
+

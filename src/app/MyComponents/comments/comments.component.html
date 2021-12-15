@@ -5,6 +5,7 @@
 
 <div>All COMMENTS:</div>
 <ul *ngFor="let comment of getCommentList()">
+  <p> Comment By: {{ userID }} </p>
   <li>{{ comment}}
 </ul>
 
