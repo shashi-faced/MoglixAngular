@@ -1,5 +1,6 @@
 <div class = "container">
     <div *ngFor = "let post of getAllPosts()">
+      <p>Post By:[ {{post.userID}} ]</p>
         <Button Type = "text" class = "btn btn-light buttonSize" (click) ="onComments(post.id)" >{{post.text}}</Button>
         <br /><br />
       

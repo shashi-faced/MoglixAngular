@@ -27,9 +27,9 @@ export class CommentsService {
     return +localStorage.getItem('lpid');    //doubt
   }
 
-  addPost(text) {
+  addPost(text,user) {
     const id = this.getLastPostId() + 1;
-    let post = {id: id, text: text};
+    let post = {id: id, text: text,userID: user};
     let postList = this.getAllPosts();
     postList.push(post);
     localStorage.setItem('post', JSON.stringify(postList));
@@ -61,3 +61,5 @@ export class CommentsService {
     return commentList;
   }
 }
+
+

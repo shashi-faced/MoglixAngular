@@ -15,18 +15,11 @@ export class PostsComponent implements OnInit {
   [x: string]: any;
   users: any;
   post:any = []
-  userpost = []
+  
 
   constructor(private http: HttpClient,private router: Router,private commentService: CommentsService,private postservice: PostService) { }
 
-  ngOnInit() {
-    
-          // console.log(data)
-
-      
-      // let resp = this.http.get("https://jsonplaceholder.typicode.com/posts");
-      //  resp.subscribe((data) => this.users = data);
-  }
+  ngOnInit() {}
 
   onComments(i)
   { 
@@ -34,11 +27,14 @@ export class PostsComponent implements OnInit {
   }
   addPost()
   {
+    let user = localStorage.getItem('username');
+    console.log("username value is "+user);
     if(this.postfield){
-      this.commentService.addPost(this.postfield);
-   this.userpost.push(this.postfield);
-   console.log(this.postfield);
-   this.postfield = null;
+      this.commentService.addPost(this.postfield, user);
+
+  //   this.userpost.push(this.postfield);
+  //  console.log(this.postfield);
+       this.postfield = null;
 
   }
 }
