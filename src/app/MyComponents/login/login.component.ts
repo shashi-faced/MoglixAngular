@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
+import { CommentsService } from 'src/app/comments.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   email: string;
   auth: boolean = false;
 
-  constructor(private route:Router,private fb:FormBuilder) {}
+  constructor(private route:Router,private fb:FormBuilder,private commentservice:CommentsService) {}
 
    
 flag:boolean = false;
@@ -31,20 +32,17 @@ flag:boolean = false;
 
   login() {
     // console.log(this.dataForm.value)
-    let emailVal  = this.primEmail;  //primemail ko email val me then print this.
+    let emailVal  = this.primEmail;  //primemail wala method primaryEmail field se data laya hai.
     console.log("login method is working properly")
-    console.log(emailVal.value);
-    console.log(this.primEmail);
+    console.log("first"+emailVal.value);
 
-    localStorage.setItem("Email_Store","skv@gmail.com");
-    // localStorage.setItem("Email_Store",emailVal.value);
-    
-     if(emailVal.value == "skv@gmail.com"){
+    let str:string = emailVal.value;
+    localStorage.setItem("username",str);
+     
       this.auth = true;  
       if(this.auth){
     this.route.navigateByUrl('/todoscomponent');
      }
-    }
      else
      {
        document.getElementById("Error").innerHTML = "Something Error";
