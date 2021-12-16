@@ -13,11 +13,12 @@ export class TodosComponent implements OnInit {
   x: number;
   isEdit = false;
   index: number;
-
   currentTodo: string;
+  username:string;
+
 
   constructor(private route:Router) {
-   
+   this.username = localStorage.getItem('username');
     this.todos = 
     ["Amit Kumar","Shashi Kumar"];
     this.x=this.todos.length;
