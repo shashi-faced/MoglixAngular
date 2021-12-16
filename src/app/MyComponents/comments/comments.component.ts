@@ -50,7 +50,6 @@ export class CommentsComponent implements OnInit {
 
       
      //storing in service 
-     JSON.parse(this.userID);
       this.commentService.commentsList(this.commentfield,this.userID);
       //this.commentprint = localStorage.getItem('tippadi');
       console.log(this.commentprint);
