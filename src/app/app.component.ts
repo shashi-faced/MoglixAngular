@@ -11,8 +11,7 @@ export class AppComponent {
   title = 'mytodos';
   username:string;
   constructor(private commentService: CommentsService) 
-  {
-  this.username = localStorage.getItem('username');   
+  {  
   }
 
 

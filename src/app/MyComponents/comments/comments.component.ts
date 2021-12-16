@@ -22,7 +22,9 @@ export class CommentsComponent implements OnInit {
   userID:string;
 
   constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,
-                  private commentService : CommentsService) { }
+                  private commentService : CommentsService) { 
+                    this.userID = localStorage.getItem('username');
+                  }
   
   ngOnInit() {
                     
@@ -48,16 +50,12 @@ export class CommentsComponent implements OnInit {
 
       
      //storing in service 
-      this.commentService.commentsList(this.commentfield);
+     JSON.parse(this.userID);
+      this.commentService.commentsList(this.commentfield,this.userID);
       //this.commentprint = localStorage.getItem('tippadi');
       console.log(this.commentprint);
 
        this.commentfield = "";
-
-       this.userID = localStorage.getItem('username');
-      console.log(this.userID);   
-       console.log(typeof(this.userID));
-
     }
 
   }

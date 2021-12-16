@@ -15,9 +15,13 @@ export class PostsComponent implements OnInit {
   [x: string]: any;
   users: any;
   post:any = []
+  username:string;
   
 
-  constructor(private http: HttpClient,private router: Router,private commentService: CommentsService,private postservice: PostService) { }
+  constructor(private http: HttpClient,private router: Router,private commentService: CommentsService,private postservice: PostService) { 
+    this.username = localStorage.getItem('username');
+    
+  }
 
   ngOnInit() {}
 

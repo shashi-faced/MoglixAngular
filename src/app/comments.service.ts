@@ -13,11 +13,11 @@ export class CommentsService {
   constructor(private http: HttpClient) { }
 
 
-  commentsList(CommentsText)
+  commentsList(CommentsText,userid)
   {
    this.userComments.push(CommentsText);
    //console.log("printing from service  "+this.userComments)
-   
+   localStorage.setItem('comId',userid);
    localStorage.setItem('tippadivalue',this.userComments)
    
    //console.log("printing value from local storage "+localStorage.getItem('tippadivalue'));
@@ -45,9 +45,9 @@ export class CommentsService {
     return postList;
   }
 
-  addComment(postId, text) {
+  addComment(postId, text:string) {
     let commentList = this.getCommentList(postId);
-
+    
     commentList.push(text);
     localStorage.setItem('post-' + postId, JSON.stringify(commentList));
   }
