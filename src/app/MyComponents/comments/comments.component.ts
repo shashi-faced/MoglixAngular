@@ -13,13 +13,11 @@ import { CommentsService } from 'src/app/comments.service';
 export class CommentsComponent implements OnInit {
   users: any;
   comments: any = []    
-  
-  commentprint: any = []
   data:any = []
   commentfield: any;  //comment input field id  
   postId: number;
-  commentdata: any;  //service reference
   userID:string;
+  com:any[];
 
   constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,
                   private commentService : CommentsService) { 
@@ -45,15 +43,13 @@ export class CommentsComponent implements OnInit {
   addComments(i)
   {
 
-    books:Array:[
-     ]
-
-     
     if(this.commentfield)
     {
-      this.commentService.addComment(this.postId, this.commentfield);
-
-      
+       this.com =[
+        {commentText:this.commentfield,userid:this.userID}]
+        localStorage.setItem('UC',JSON.stringify(this.com));
+      this.commentService.addComment(this.postId, this.commentfield );
+       
      //storing in service 
       this.commentService.commentsList(this.commentfield,this.userID);
       //this.commentprint = localStorage.getItem('tippadi');

@@ -1,4 +1,4 @@
-
+welcome,   {{userID}}
 <br /><br />
 <div class = "container">
 <br />
@@ -8,7 +8,7 @@
 <div>All COMMENTS:</div>
 <div *ngFor="let comment of getCommentList()" class = "w3-panel w3-leftbar w3-border-blue w3-pale-blue">
  <ul> 
-  <p> Comment By: {{ userID }} </p>
+  <p> Comment By: {{ userID  }} </p>
 
   <li><p class = "buttonSize">{{ comment}}</p></li>
 </ul>
@@ -25,6 +25,6 @@
 
     <br>
    <div class="w3-panel w3-leftbar w3-border-blue w3-pale-blue">
-    <p class="buttonSize">{{user}} </p>
+    <p class="buttonSize">{{ user }} </p>
   </div>	
 </div>
