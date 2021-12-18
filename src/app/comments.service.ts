@@ -50,6 +50,8 @@ export class CommentsService {
     
     commentList.push(text);
     localStorage.setItem('post-' + postId, JSON.stringify(commentList));
+    
+
   }
 
   getCommentList(postId) {

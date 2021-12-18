@@ -19,6 +19,7 @@ export class CommentsComponent implements OnInit {
   userID:string;
   com:any[];
 
+
   constructor(private http: HttpClient,private router:Router,private activeRoute: ActivatedRoute,
                   private commentService : CommentsService) { 
                     this.userID = localStorage.getItem('username');
@@ -46,9 +47,10 @@ export class CommentsComponent implements OnInit {
     if(this.commentfield)
     {
        this.com =[
-        {commentText:this.commentfield,userid:this.userID}]
-        localStorage.setItem('UC',JSON.stringify(this.com));
-      this.commentService.addComment(this.postId, this.commentfield );
+        {commentText:this.commentfield,userid:this.userID}];
+         
+        localStorage.setItem('UC',JSON.stringify(this.com)); //stored com array in local stoarge 
+        this.commentService.addComment(this.postId, this.commentfield );
        
      //storing in service 
       this.commentService.commentsList(this.commentfield,this.userID);
